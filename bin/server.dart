@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:gerencia_net_plus_api/app/modules/hello_world/hello_world_controller.dart';
 import 'package:gerencia_net_plus_api/app/modules/webhooks/gerencia_net_plus_webhook_controller.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart';
@@ -7,6 +8,7 @@ import 'package:shelf_router/shelf_router.dart';
 
 // Configure routes.
 final _router = Router()
+  ..mount('/', HelloWorldController().router)
   ..mount('/gerencianet/webhook/', GerenciaNetPlusWebhookController().router);
 
 void main(List<String> args) async {
