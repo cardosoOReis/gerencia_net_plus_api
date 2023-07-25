@@ -11,12 +11,12 @@ Router _$GerenciaNetPlusWebhookControllerRouter(
   final router = Router();
   router.add(
     'POST',
-    r'/',
+    r'/webhook',
     service.webhookConfig,
   );
   router.add(
     'POST',
-    r'/pix',
+    r'/webhook/pix',
     service.webhookPaymentCallback,
   );
   return router;

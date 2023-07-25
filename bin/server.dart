@@ -9,7 +9,7 @@ import 'package:shelf_router/shelf_router.dart';
 // Configure routes.
 final _router = Router()
   ..mount('/', HelloWorldController().router)
-  ..mount('/gerencianet/webhook/', GerenciaNetPlusWebhookController().router);
+  ..mount('/gerencianet/', GerenciaNetPlusWebhookController().router);
 
 void main(List<String> args) async {
   // Use any available host or container IP (usually `0.0.0.0`).

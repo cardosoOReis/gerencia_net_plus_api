@@ -6,7 +6,7 @@ import 'package:shelf_router/shelf_router.dart';
 part 'gerencia_net_plus_webhook_controller.g.dart';
 
 class GerenciaNetPlusWebhookController {
-  @Route.post('/')
+  @Route.post('/webhook')
   Future<Response> webhookConfig(Request request) async {
     return Response(
       200,
@@ -16,7 +16,7 @@ class GerenciaNetPlusWebhookController {
     );
   }
 
-  @Route.post('/pix')
+  @Route.post('/webhook/pix')
   Future<Response> webhookPaymentCallback(Request request) async {
     final callback = GerenciaNetPlusCallbackViewModel.fromJson(
       await request.readAsString(),
