@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:gerencia_net_plus_api/app/modules/webhooks/view_models/gerencia_net_plus_callback_view_model.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf_router/shelf_router.dart';
 
@@ -18,11 +17,9 @@ class GerenciaNetPlusWebhookController {
 
   @Route.post('/webhook/pix')
   Future<Response> webhookPaymentCallback(Request request) async {
-    final callback = GerenciaNetPlusCallbackViewModel.fromJson(
-      await request.readAsString(),
-    );
+    final callback = await request.readAsString();
 
-    print(callback.toMap());
+    print(callback);
 
     return Response(
       200,
